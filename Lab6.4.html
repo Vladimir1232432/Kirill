@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Ревин</title>
@@ -11,10 +11,12 @@
         document.write("<br>");
 
         class Braslet {
-            constructor(pamiat, platforma, datchiki) {
+            constructor(pamiat, platforma, datchiki, zizca) {
                 this.pamiatt = pamiat;
                 this.platformaa = platforma;
                 this.datchikii = datchiki;
+                this.zizcaa = zizca;
+
             }
             get pamiat() {
                 return this.pamiatt;
@@ -34,10 +36,16 @@
             set datchiki(datchiki1) {
                 this.datchikii = datchiki1;
             }
+            get zizca() {
+                return this.zizcaa;
+            }
+            set zizca(zizca1) {
+                this.zizcaa = zizca1;
+            }
         }
 
         class DATA extends Braslet {
-            constructor(pamiat, platforma, datchiki, DD, MM, YYYY, stoim) {
+            constructor(pamiat, platforma, datchiki, zizca, DD, MM, YYYY, stoim) {
                 super(pamiat, platforma, datchiki);
                 this.DDz = DD;
                 this.MMz = MM;
@@ -77,16 +85,19 @@
             document.write("<br>");
             document.write("Датчики: " + Apple.datchiki);
             document.write("<br>");
+            document.write("Датчики: " + Apple.zizca);
+            document.write("<br>");
             document.write("Дата: " + aboba.DD + "." + aboba.MM + "." + aboba.YYYY);
             document.write("<br>");
             document.write("Стоимость: " + aboba.stoim + " Рублей.");
         }
 
-        var Apple = new Braslet(6, "IOS.", "Термометры.");
-        var aboba = new DATA(6, "IOS.", "Термометры", 20, 04, 2023, 1000000);
+        var Apple = new Braslet(6, "IOS.", "Термометры.",1);
+        var aboba = new DATA(6, "IOS.", "Термометры",1, 20, 04, 2023, 1000000);
 
-        Info();  
-      
+        Info();
+
     </script>
 </body>
 </html>
+
